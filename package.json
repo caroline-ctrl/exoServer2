@@ -1,0 +1,23 @@
+{
+  "name": "exoserver2",
+  "version": "1.0.0",
+  "description": "exercie de confinement sur node.js. Realisation d'un petit server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caroline-ctrl/exoServer2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caroline-ctrl/exoServer2/issues"
+  },
+  "homepage": "https://github.com/caroline-ctrl/exoServer2#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
