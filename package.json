@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caroline-ctrl/exoServer2.git"
+    "url": "git+https://github.com/caroline-ctrl/exoServer2.git"
   },
   "author": "",
   "license": "ISC",
