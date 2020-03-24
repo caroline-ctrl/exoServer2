@@ -17,7 +17,7 @@ const generalMethod = (req, res) => {
 
     }
 
-
+// nom == create-user
     if (url === '/nom' && method === 'POST') {
         const table = [];
         req.on('data', (chunk) => {
@@ -26,28 +26,27 @@ const generalMethod = (req, res) => {
 
         return req.on('end', () => {
             const parse = Buffer.concat(table).toString('utf-8');
-            const name = parse.split('=')[1];
-            // redirection
-            // res.writeHead(301, {location: '/affiche'});
-            res.setHeader('Content-Text', 'text/html');
-            res.write('<html>');
-            res.write('<head><title>Nom user</title></head>')
-            res.write('<body><h1>Votre nom</h1>');
-            res.write('<p> votre nom est <strong>' + name + '</strong>.</p>');
-            res.write('</html>');
+            res.writeHead(301, {location: '/affiche'});
             res.end();
+            return  name = parse.split('=')[1];
         });
+        
     }
 
 
-    
-    // res.statusCode = 404;
-    // // res.setHeader('Content-Type', 'text/html');
-    // res.write('<html>');
-    // res.write('<head><title>Erreur 404</title></head>');
-    // res.write('<body><h1>Erreur 404</h1></body>');
-    // res.write('</html>');
-    // return res.end();
+// affiche == users
+    if (url === '/affiche') {
+        res.setHeader('Content-Text', 'text/html');
+        res.write('<html>');
+        res.write('<head><title>Nom user</title></head>')
+        res.write('<body><h1>Votre nom</h1>');
+        res.write('<p> votre nom est <strong>' + name + '</strong>.</p>');
+        res.write('</html>');
+        res.end();
+
+    }
+
+
 }
 
 module.exports = generalMethod;
