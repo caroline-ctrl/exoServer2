@@ -7,16 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caroline-ctrl/exoServer2.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/caroline-ctrl/exoServer2/issues"
-  },
-  "homepage": "https://github.com/caroline-ctrl/exoServer2#readme",
   "devDependencies": {
     "nodemon": "^2.0.2"
   }
