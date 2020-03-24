@@ -11,14 +11,14 @@ const generalMethod = (req, res) => {
         res.write('<head><title>Nom user</title></head>')
         res.write('<body><h1>Votre nom</h1>');
         res.write('<h3>Renseignez votre nom et appuyez sur envoyer</h3>');
-        res.write('<form action="/nom" method="POST"/><input type="text" name="nom"><button type="submit">Envoyer</button></body>')
+        res.write('<form action="/create-user" method="POST"/><input type="text" name="nom"><button type="submit">Envoyer</button></body>')
         res.write('</html>');
         res.end();
 
     }
 
-// nom == create-user
-    if (url === '/nom' && method === 'POST') {
+
+    if (url === '/create-user' && method === 'POST') {
         const table = [];
         req.on('data', (chunk) => {
             table.push(chunk);
@@ -26,7 +26,7 @@ const generalMethod = (req, res) => {
 
         return req.on('end', () => {
             const parse = Buffer.concat(table).toString('utf-8');
-            res.writeHead(301, {location: '/affiche'});
+            res.writeHead(301, {location: '/users'});
             res.end();
             return  name = parse.split('=')[1];
         });
@@ -35,7 +35,7 @@ const generalMethod = (req, res) => {
 
 
 // affiche == users
-    if (url === '/affiche') {
+    if (url === '/users') {
         res.setHeader('Content-Text', 'text/html');
         res.write('<html>');
         res.write('<head><title>Nom user</title></head>')
